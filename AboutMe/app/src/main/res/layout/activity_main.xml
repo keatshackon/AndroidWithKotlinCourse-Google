@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- Declare a variable by specifying a name and a data type. -->
+        <!-- Use fully qualified name for the type. -->
+        <variable
+            name="myyName"
+            type="com.keatssalazar.aboutme.MyName" />
+    </data>
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="#3A3939"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={myyName.name}"
+            style="@style/nameStyle" />
+
+        <EditText
+            android:id="@+id/nicknameedit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/todo"
+            android:ems="10"
+            android:textColor="@color/textColor"
+            android:inputType="textPersonName"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:hint="@string/name"
+            android:textColorHint="#646465"/>
+
+        <TextView
+            android:id="@+id/nickname_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/nameStyle"
+            android:text="@={myyName.nickname}"
+            android:layout_margin="10dp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/doneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/margin_top"
+            android:fontFamily="@font/asset"
+            style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+            android:textColor="@color/colorAccent"
+            android:text="@string/done" />
+
+        <ImageView
+            android:id="@+id/starImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/Yellow_start"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/bio_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bio"
+                style="@style/nameStyle"
+                android:textAlignment="viewStart"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingBottom="20dp"
+                android:lineSpacingMultiplier="1.2"/>
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">About Me</string>
+    <string name="name">Keats Salazar</string>
+    <string name="Yellow_start">yellostart</string>
+    <string name="bio">My Name is Keats salazar.
+        \n\n I Love To Play Chess.
+        \n\n I Am Very Good At Developing Android Application.
+        \n\n My Hobbies Is To Solve The Real Life Problems.
+        \n\n I Also Like To Play Mind Teaser Game Like Sudoku.
+        \n\n I Also Like To Watch Horror Movie.
+        \n\n Doing Coding is one my favourite Time Passing</string>
+    <string name="what_is_your_nick_name">What is your Nick Name</string>
+    <string name="done">Done</string>
+    <string name="todo">todo</string>
+</resources>
