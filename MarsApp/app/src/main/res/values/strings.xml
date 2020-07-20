@@ -1,0 +1,14 @@
+
+<resources>
+    <string name="app_name">MarsApp</string>
+    <string name="show_all">Show all</string>
+    <string name="show_rent">Rent</string>
+    <string name="show_buy">Buy</string>
+    <string name="type_rent">Rent</string>
+    <string name="type_sale">Sale</string>
+    <string name="display_type">For %s</string>
+    <string name="display_price_monthly_rental">$%,.0f/month</string>
+    <string name="display_price">$%,.0f</string>
+    <string name="set_the_mars_api_here">set The Mars API here!</string>
+
+</resources>
