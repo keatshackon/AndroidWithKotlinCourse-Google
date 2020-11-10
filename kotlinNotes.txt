@@ -1,0 +1,149 @@
+
+
+Notes:: binding data when your create viewModel!!
+
+call this method binding.setLifecycleOwner(this) when you bind the data  and not the view through databinding!!
+
+
+==================================================================================================================
+
+
+
+                                                LESSON 1
+
+1-->    lateinit[keyword] promisees the we leave the image view as null and also initialize before doing
+        any operation on it  and also treated as non null!
+
+2-->    namespace resolve the ambiguity when refering the same attributes twice
+        e.g[ android:src="@drawable/dice_1"  and tools:src="@drawable/dice_1"]
+        here android and tools came from different namespace
+        
+        tools namespace is only use to show the dummy content/data on compiling it gonna remove by compiler!
+
+3-->    revisable 25,26,27,28!
+
+================================================================================================================
+                                                Lesson 2
+
+1-->    To Hide The keyboard
+        val mm =getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        mm.hideSoftInputFromWindow(view.windowToken,0)
+
+2-->    Data binding's more advanced features include ways to write short logical expressions in your XML code,
+        and enhanced functionality with Android Jetpack libraries. You will learn about these more advanced features throughout the course.
+        These features are not available with view binding and because of this, data binding remains an important library to master.
+        In summary, when using Android Studio 3.6+, when you only need access to views, use view binding.
+        If you need the more advanced features data binding provides, use data binding.
+
+
+===================================================================================================================
+                                                LESSON 3
+
+1--> we can use Naviagtion controller to traverse iver the multiple fragment
+2--> android:name="androidx.navigation.fragment.NavHostFragment" it is fragment which came pre-buit by android system
+3--> app:navGraph="@navigation/navigation" Naviagtion resource file made in navigation folder in resource directory 
+4--> app:defaultNavHost="true" means that this navigation host will intercept the system back key.
+
+5--> We get type safety, as navigation generates the action and the argument class from the navigation graph.
+     We get argument enforcement, as non-default arguments are required parameters in the action.
+
+6--> "com.google.android.material:material:$version_material" import this to implement naviagtion drawer
+7--> implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2' to implement the navGraph folder
+     
+8--> implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'  for safe argument ue this libarary and 
+     in the app level dependecy add apply plugin: 'androidx.navigation.safeargs'
+
+
+=================================================================================================================
+                                                LESSON 4
+
+==> HOW TO PREVENT FROM DATA LOSE from screen rotation and taking away fom activity
+==> LIFECYCLE of activities and fragment
+==> LIFECYCLE CLASS AND LIFECYCLE LIBRARY OBSERVER!
+==> know a little bit about the savedInstnces which is used when phone configuration change  or application shutdown by os!
+==> know when to stop the action or strat the action using lifecycle libraries called, life cycle OBSERVER!
+
+==> revisable 14,18
+
+=================================================================================================================
+                                                LESSON 5 [Archietecture of android] [separation of concern!]
+================================================================================================================
+==> VIEW MODEL using life cycle 
+==> LIVE DATA using life cycle
+==> DATA BINDING  to remove BOILERPLATE using lifecycle libarary!
+
+==> Using lifecycle libraries we can saved the lots of data[through live data techniq] when application goes on configuration
+    savedInstnces can do the same work but it has memory limit to 100kb!
+
+==> implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0' this dependecy needed to use live data 
+
+==>  lifecycle libarary create the instance of gameviewmodel then it will not recreate when application go to configuration change
+==>  when fragment goes on destruction before that onCleaned was called!
+
+                                        
+                                        IMPORTANT LINK FOR ANDROID architecture
+                                        =======================================
+==> https://android-developers.googleblog.com/2017/05/android-and-architecture.html
+==> https://developer.android.com/jetpack/docs/guide
+==> https://medium.com/upday-devs/android-architecture-patterns-part-2-model-view-presenter-8a6faaae14a5
+==> https://www.youtube.com/watch?v=QrbhPcbZv0I
+==> https://www.youtube.com/watch?v=pErTyQpA390
+==> https://github.com/android/architecture-samples/wiki/Samples-at-a-glance
+==> https://github.com/android/architecture-samples
+
+==> The ViewModel is a stable place to store the data to display in the associated UI controller.
+    The Fragment draws the data on screen and captures input events. 
+    It should not decide what to display on screen or process what happens during an input event.
+    The ViewModel never contains references to activities, fragments, or views.
+
+==> Ui only hold the activities and fragment while view model hold the ui data to prevent from the getting lost 
+    while system configuration change and if os shut down our applictaion!
+
+
+==> AndroidTest Folder contain the code which can run with emulating android frameWork which is also a heavywight weight.
+    while test contain  code which run without emulating  android framework which is light wieght! 
+
+==> using LIFECYCLE libraries gives data persistancy but whn the app clode by os then data also get lost 
+    to fixe this problen we use live concept!
+
+==> https://developer.android.com/topic/libraries/architecture/saving-states
+    you can use three method to store data on configuration change[viewMode savedInstnces and data persistance]
+    follow above link to get differenciation!
+
+==> live data is used the obsever class to notify the ui  data has changed and need to update ui!
+    and its only update the ui when screen on focus mode!!
+
+==> backing property is something which allow the data to seen outside class but very limited way just like the getter method
+    it done by encapsulating the data![reviable 16]
+
+==> also how to bind the xml file with Live data using concept of databinding with the help of lifecycle libarary!!
+    [important revisable 23]
+
+==> how to pass data/information in viewModel![revisable 22 important]
+
+==> viewModel factory create viewMode!
+
+=================================================================================================================
+                                     LESSON 6 [ROOM DATABASE AND DAO[Data access object]]
+================================================================================================================
+
+==> co-rountine is used to do asynchoronous task in application [revisable 14].
+
+==> https://codelabs.developers.google.com/codelabs/kotlin-coroutines/#0 best co-rountine explanation!
+
+==> If you need to write a function that can be called without having a class instance but needs access to the internals of a class,
+    you can write it as a member of a companion object declaration inside that class.
+
+==> binding.setLifeCycleOwner(this) this pieces of code use to know the binding class observe the change in data
+    and take the necessry steps!
+    
+
+
+==================================================================================================================
+                                                Lesson 8[Network]
+=================================================================================================================
+
+1>  we can use retrofit callback to fetch the data in our Application but we can also fetch data using 
+    co-routine!
+
+2> Public Object is used to expose the object throughout the application !! 
